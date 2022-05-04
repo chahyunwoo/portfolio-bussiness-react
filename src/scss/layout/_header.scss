@@ -1,0 +1,43 @@
+header {
+	width: 100%;
+	background-color: #ddd;
+
+	.inner {
+		@include inner;
+		height: 8rem;
+		margin: 0 auto;
+		position: relative;
+
+		.logo {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+
+			a {
+				font-family: 'Cormorant', serif;
+				font-weight: 400;
+				font-size: 24px;
+				color: #333;
+			}
+		}
+
+    #gnb {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include clear;
+
+      li {
+        float: left;
+
+        a {
+          font-family: 'Lato', sans-serif;
+          display: inline-block;
+          padding: 2rem 3rem;
+          font-size: 1.4rem;
+          line-height: 1;
+        }
+      }
+    }
+	}
+}

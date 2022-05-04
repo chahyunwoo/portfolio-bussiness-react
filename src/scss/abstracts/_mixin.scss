@@ -1,0 +1,32 @@
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin clear {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin inner {
+  width: 1180px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@mixin objectFit($height: 100%, $transition: 1s) {
+  width: 100%;
+  height: $height;
+  object-fit: cover;
+  transition: $transition;
+}
