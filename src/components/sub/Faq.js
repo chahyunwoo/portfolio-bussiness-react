@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '../common/Layout'
 
 function Faq() {
   return (
-    <div>Faq</div>
+    <Layout name={'faq'}>
+      <p>FAQ</p>
+    </Layout>
   )
 }
 

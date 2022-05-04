@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Layout from '../common/Layout';
 
 function Rooms() {
-  return (
-    <div>Rooms</div>
-  )
+	return (
+    <Layout name={'rooms'}>
+      <p>ROOMS</p>
+    </Layout>
+  );
 }
 
-export default Rooms
+export default Rooms;

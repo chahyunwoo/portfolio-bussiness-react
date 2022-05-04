@@ -1,0 +1,64 @@
+footer {
+	width: 100%;
+	background-color: $colorLightGray;
+
+	.inner {
+		@include inner;
+		padding: 5rem 0;
+		position: relative;
+    
+		.wrap {
+      @include clear;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #bbb;
+
+			.info {
+				float: left;
+
+				> h1 {
+					margin-bottom: 1rem;
+				}
+
+				p {
+					margin-bottom: 0.5rem;
+					color: $colorBlack;
+					font-size: 1.2rem;
+					line-height: 1;
+					font-family: 'arial';
+				}
+			}
+
+			.sns {
+				float: right;
+
+				.snsList {
+					li {
+						float: left;
+
+						a {
+							color: $colorBlack;
+							font-size: 1.6rem;
+							padding: 0 0.5rem;
+						}
+					}
+				}
+			}
+		}
+
+    > p {
+      padding-top: 2rem;
+      font-size: 1.2rem;
+      color: #aaa;
+      text-align: right;
+    }
+	}
+}
+
+@include tablet {
+  footer {
+    .inner {
+      width: 100%;
+      padding: 5rem 3rem;
+    }
+  }
+}

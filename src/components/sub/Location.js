@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '../common/Layout'
 
 function Location() {
   return (
-    <div>Location</div>
+    <Layout name={'location'}>
+      <p>LOCATION</p>
+    </Layout>
   )
 }
 

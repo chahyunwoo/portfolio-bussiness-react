@@ -1,6 +1,7 @@
 header {
 	width: 100%;
-	background-color: #ddd;
+	background-color: $colorWhite;
+  border: 1px solid $colorBlack;
 
 	.inner {
 		@include inner;
@@ -8,36 +9,56 @@ header {
 		margin: 0 auto;
 		position: relative;
 
-		.logo {
-      position: absolute;
-      bottom: 2rem;
-      left: 0;
-
-			a {
-				font-family: 'Cormorant', serif;
-				font-weight: 400;
-				font-size: 24px;
-				color: #333;
-			}
+		> h1 {
+			position: absolute;
+			bottom: 2rem;
+			left: 0;
 		}
 
-    #gnb {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      @include clear;
+		#gnb {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			@include clear;
 
-      li {
-        float: left;
+			li {
+				float: left;
 
-        a {
-          font-family: 'Lato', sans-serif;
-          display: inline-block;
-          padding: 2rem 3rem;
-          font-size: 1.4rem;
-          line-height: 1;
-        }
+				a {
+					font-family: 'Lato', sans-serif;
+					display: inline-block;
+					padding: 2rem 3rem;
+					font-size: 1.4rem;
+					line-height: 1;
+					transition: 0.35s;
+          color: $colorBlack;
+				}
+			}
+		}
+	}
+
+  &.main {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+@include tablet {
+  header {
+    .inner {
+      width: 100%;
+  
+      > h1 {
+        left: 3rem;
+      }
+  
+      #gnb {
+        display: none;
       }
     }
-	}
+  }
 }
