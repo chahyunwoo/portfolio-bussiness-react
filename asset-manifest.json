@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/portfolio-bussiness-react/static/css/main.a55eccf9.css",
+    "main.js": "/portfolio-bussiness-react/static/js/main.46d2e6f8.js",
+    "index.html": "/portfolio-bussiness-react/index.html",
+    "main.a55eccf9.css.map": "/portfolio-bussiness-react/static/css/main.a55eccf9.css.map",
+    "main.46d2e6f8.js.map": "/portfolio-bussiness-react/static/js/main.46d2e6f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a55eccf9.css",
+    "static/js/main.46d2e6f8.js"
+  ]
+}
