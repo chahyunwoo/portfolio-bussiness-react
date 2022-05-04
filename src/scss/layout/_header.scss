@@ -1,7 +1,7 @@
 header {
 	width: 100%;
 	background-color: $colorWhite;
-  border: 1px solid $colorBlack;
+  border-bottom: 1px solid $colorBlack;
 
 	.inner {
 		@include inner;
