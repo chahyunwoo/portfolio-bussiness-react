@@ -12,13 +12,6 @@ function Header({ type }) {
 	const menuMo = useRef();
 
 	const onClick = (e) => {
-		// let target = e.target.closest('li').querySelector('a')
-
-		// if (e.target === target) {
-		// 	btnCall.current.classList.remove('on');
-		// 	menuMo.current.classList.remove('on');
-		// }
-
 		btnCall.current.classList.remove('on');
 		menuMo.current.classList.remove('on');
 	};
@@ -26,10 +19,10 @@ function Header({ type }) {
 	const active = { color: 'orange' };
 
 	return (
-		<header className={type}>
+		<header className={type} onClick={onClick}>
 			<div className='inner'>
 				<h1>
-					<NavLink exact to='/' className='logo' onClick={onClick}>
+					<NavLink exact to='/' className='logo'>
 						(salt;)
 					</NavLink>
 				</h1>
@@ -76,38 +69,35 @@ function Header({ type }) {
 					<span></span>
 				</button>
 
-				<nav
-					className={`menuMo${toggle ? ' on' : ''}`}
-					ref={menuMo}
-					onClick={onClick}>
+				<nav className={`menuMo${toggle ? ' on' : ''}`} ref={menuMo}>
 					<ul id='gnbMo'>
 						<li>
-							<NavLink activeStyle={active} to='/rooms' onClick={onClick}>
+							<NavLink activeStyle={active} to='/rooms'>
 								ROOMS
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/gallery' onClick={onClick}>
+							<NavLink activeStyle={active} to='/gallery'>
 								GALLERY
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/youtube' onClick={onClick}>
+							<NavLink activeStyle={active} to='/youtube'>
 								YOUTUBE
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/faq' onClick={onClick}>
+							<NavLink activeStyle={active} to='/faq'>
 								FAQ
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/location' onClick={onClick}>
+							<NavLink activeStyle={active} to='/location'>
 								LOCATION
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/join' onClick={onClick}>
+							<NavLink activeStyle={active} to='/join'>
 								JOIN
 							</NavLink>
 						</li>
