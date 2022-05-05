@@ -11,8 +11,15 @@ function Header({ type }) {
 	const btnCall = useRef();
 	const menuMo = useRef();
 
-	const onClick = () => {
-		btnCall.current.classList.remove('on')
+	const onClick = (e) => {
+		// let target = e.target.closest('li').querySelector('a')
+
+		// if (e.target === target) {
+		// 	btnCall.current.classList.remove('on');
+		// 	menuMo.current.classList.remove('on');
+		// }
+
+		btnCall.current.classList.remove('on');
 		menuMo.current.classList.remove('on');
 	};
 
@@ -69,7 +76,10 @@ function Header({ type }) {
 					<span></span>
 				</button>
 
-				<nav className={`menuMo${toggle ? ' on' : ''}`} ref={menuMo}>
+				<nav
+					className={`menuMo${toggle ? ' on' : ''}`}
+					ref={menuMo}
+					onClick={onClick}>
 					<ul id='gnbMo'>
 						<li>
 							<NavLink activeStyle={active} to='/rooms' onClick={onClick}>
