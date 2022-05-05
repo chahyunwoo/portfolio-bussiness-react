@@ -72,54 +72,55 @@ header {
 			}
 
 			&.on {
-        right: 22rem;
+				right: 22rem;
 
 				span {
 					&:nth-of-type(1) {
-            top: 50%;
-            transform: skewY(45deg);
-          }
+						top: 50%;
+						transform: skewY(45deg);
+					}
 					&:nth-of-type(2) {
-            left: 100%;
-            opacity: 0;
-          }
+						left: 100%;
+						opacity: 0;
+					}
 					&:nth-of-type(3) {
-            top: 50%;
-            transform: skewY(-45deg);
-          }
+						top: 50%;
+						transform: skewY(-45deg);
+					}
 				}
 			}
 		}
 
-    .menuMo {
-      width: 20rem;
-      height: 100vh;
-      background-color: $colorWhite;
-      position: fixed;
-      top: 0;
-      right: -25rem;
-      padding: 5rem 3rem;
-      transition: .35s;
-      z-index: 9;
-      border-left: 1px solid $colorBlack;
+		.menuMo {
+			width: 20rem;
+			height: 100vh;
+			background-color: $colorWhite;
+			position: fixed;
+			top: 0;
+			right: -25rem;
+			padding: 5rem 3rem;
+			transition: 0.35s;
+			z-index: 9;
+			border-left: 1px solid $colorBlack;
 
-      &.on {
-        right: 0;
-      }
+			&.on {
+				right: 0;
+			}
 
-      #gnbMo {
-        li {
-          a {
-            display: inline-block;
-            width: 100%;
-            padding: 3rem 0;
-            font-size: 2rem;
-            color: $colorBlack;
-            text-align: center;
-          }
-        }
-      }
-    }
+			#gnbMo {
+				li {
+					a {
+						font-family: 'Lato', sans-serif;
+						display: inline-block;
+						width: 100%;
+						padding: 3rem 0;
+						font-size: 2rem;
+						color: $colorBlack;
+						text-align: center;
+					}
+				}
+			}
+		}
 	}
 
 	&.main {
