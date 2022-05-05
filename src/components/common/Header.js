@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Header({ type }) {
@@ -6,6 +6,14 @@ function Header({ type }) {
 
 	const clickedToggle = () => {
 		setToggle((prev) => !prev);
+	};
+
+	const btnCall = useRef();
+	const menuMo = useRef();
+
+	const onClick = () => {
+		btnCall.current.classList.remove('on')
+		menuMo.current.classList.remove('on');
 	};
 
 	const active = { color: 'orange' };
@@ -54,41 +62,42 @@ function Header({ type }) {
 
 				<button
 					className={`btnCall${toggle ? ' on' : ''}`}
-					onClick={clickedToggle}>
+					onClick={clickedToggle}
+					ref={btnCall}>
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
 
-				<nav className={`menuMo${toggle ? ' on' : ''}`}>
+				<nav className={`menuMo${toggle ? ' on' : ''}`} ref={menuMo}>
 					<ul id='gnbMo'>
 						<li>
-							<NavLink activeStyle={active} to='/rooms'>
+							<NavLink activeStyle={active} to='/rooms' onClick={onClick}>
 								ROOMS
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/gallery'>
+							<NavLink activeStyle={active} to='/gallery' onClick={onClick}>
 								GALLERY
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/youtube'>
+							<NavLink activeStyle={active} to='/youtube' onClick={onClick}>
 								YOUTUBE
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/faq'>
+							<NavLink activeStyle={active} to='/faq' onClick={onClick}>
 								FAQ
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/location'>
+							<NavLink activeStyle={active} to='/location' onClick={onClick}>
 								LOCATION
 							</NavLink>
 						</li>
 						<li>
-							<NavLink activeStyle={active} to='/join'>
+							<NavLink activeStyle={active} to='/join' onClick={onClick}>
 								JOIN
 							</NavLink>
 						</li>
