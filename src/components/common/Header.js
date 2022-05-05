@@ -22,7 +22,7 @@ function Header({ type }) {
 		<header className={type}>
 			<div className='inner'>
 				<h1>
-					<NavLink exact to='/' className='logo'>
+					<NavLink exact to='/' className='logo' onClick={onClick}>
 						(salt;)
 					</NavLink>
 				</h1>
