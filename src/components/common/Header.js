@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Header({ type }) {
@@ -8,18 +8,10 @@ function Header({ type }) {
 		setToggle((prev) => !prev);
 	};
 
-	const btnCall = useRef();
-	const menuMo = useRef();
-
-	const onClick = (e) => {
-		btnCall.current.classList.remove('on');
-		menuMo.current.classList.remove('on');
-	};
-
 	const active = { color: 'orange' };
 
 	return (
-		<header className={type} onClick={onClick}>
+		<header className={type}>
 			<div className='inner'>
 				<h1>
 					<NavLink exact to='/' className='logo'>
@@ -62,14 +54,13 @@ function Header({ type }) {
 
 				<button
 					className={`btnCall${toggle ? ' on' : ''}`}
-					onClick={clickedToggle}
-					ref={btnCall}>
+					onClick={clickedToggle}>
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
 
-				<nav className={`menuMo${toggle ? ' on' : ''}`} ref={menuMo}>
+				<nav className='menuMo'>
 					<ul id='gnbMo'>
 						<li>
 							<NavLink activeStyle={active} to='/rooms'>
