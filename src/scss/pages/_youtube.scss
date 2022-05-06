@@ -1,0 +1,67 @@
+.youtube {
+  .inner {
+    .videosWrap {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      article {
+        width: calc((100% - 2rem) / 3);
+        padding: 3rem;
+
+        &:nth-of-type(odd) {
+          .pic {
+            background-color: #F7F2DF;
+          }
+        }
+        &:nth-of-type(even) {
+          .pic {
+            background-color: #E1E0DC;
+          }
+        }
+        
+
+        h2 {
+          font-family: 'Lato', sans-serif;
+          margin-bottom: 2rem;
+          font-size: 2rem;
+          font-weight: 100;
+        }
+
+        .pic {
+          width: 100%;
+          padding: 3rem;
+
+          img {
+            @include objectFit;
+          }
+        }
+
+        .desc {
+          margin-top: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            font-size: 1.6rem;
+            color: $colorBlack;
+            font-weight: 100;
+
+            &:after {
+              content: '/';
+              margin-left: 1rem;
+            }
+          }
+
+          span {
+            font-size: 1.4rem;
+            color: $colorBlack;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+  }
+}
