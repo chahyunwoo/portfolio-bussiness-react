@@ -1,67 +1,130 @@
 .youtube {
-  .inner {
-    .videosWrap {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+	.inner {
+		.videosWrap {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
 
-      article {
-        width: calc((100% - 2rem) / 3);
-        padding: 3rem;
+			article {
+				width: calc((100% - 2rem) / 3);
+				padding: 3rem;
+				cursor: pointer;
 
-        &:nth-of-type(odd) {
-          .pic {
-            background-color: #F7F2DF;
-          }
-        }
-        &:nth-of-type(even) {
-          .pic {
-            background-color: #E1E0DC;
-          }
-        }
-        
+				&:nth-of-type(odd) {
+					.pic {
+						background-color: #f7f2df;
+					}
+				}
+				&:nth-of-type(even) {
+					.pic {
+						background-color: #e1e0dc;
+					}
+				}
 
-        h2 {
-          font-family: 'Lato', sans-serif;
-          margin-bottom: 2rem;
-          font-size: 2rem;
-          font-weight: 100;
-        }
+				h2 {
+					font-family: 'Lato', sans-serif;
+					margin-bottom: 2rem;
+					font-size: 2rem;
+					font-weight: 100;
+				}
 
-        .pic {
-          width: 100%;
-          padding: 3rem;
+				.pic {
+					width: 100%;
+					padding: 3rem;
+					overflow: hidden;
 
-          img {
-            @include objectFit;
-          }
-        }
+					img {
+						@include objectFit;
+					}
+				}
 
-        .desc {
-          margin-top: 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+				.desc {
+					margin-top: 2rem;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
 
-          p {
-            font-size: 1.6rem;
-            color: $colorBlack;
-            font-weight: 100;
+					p {
+						font-size: 1.6rem;
+						color: $colorBlack;
+						font-weight: 100;
 
-            &:after {
-              content: '/';
-              margin-left: 1rem;
-            }
-          }
+						&:after {
+							content: '/';
+							margin-left: 1rem;
+						}
+					}
 
-          span {
-            font-size: 1.4rem;
-            color: $colorBlack;
-            font-weight: 100;
-          }
-        }
-      }
-    }
-  }
+					span {
+						font-size: 1.4rem;
+						color: $colorBlack;
+						font-weight: 100;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.youtube {
+		.inner {
+			.videosWrap {
+				gap: 0;
+
+				article {
+					width: calc(100% / 2);
+					padding: 2%;
+
+					h2 {
+						font-size: 1.8rem;
+					}
+
+					.pic {
+						width: 100%;
+						padding: 8%;
+						margin-bottom: 2rem;
+					}
+
+					.desc {
+						p {
+							font-size: 1.8vmin;
+						}
+
+						span {
+							font-size: 1.6vmin;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+  .youtube {
+		.inner {
+			.videosWrap {
+				article {
+					width: 100%;
+          margin-bottom: 3rem;
+
+					h2 {
+						font-size: 1.8rem;
+					}
+
+					.desc {
+						p {
+							font-size: 2vmin;
+						}
+
+						span {
+							font-size: 1.8vmin;
+						}
+					}
+				}
+			}
+		}
+	}
 }
