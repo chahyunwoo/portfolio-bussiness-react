@@ -1,0 +1,97 @@
+.location {
+	.inner {
+		.rightDeco {
+			position: absolute;
+			top: -80%;
+			right: 0;
+			border-radius: 50%;
+			font-size: 0;
+			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+			overflow: hidden;
+
+			&:hover {
+				.deco {
+					transform: scale(1.1);
+				}
+			}
+
+			.deco {
+				@include objectFit;
+			}
+		}
+
+		.locationBox {
+			width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+
+			div {
+				width: 50%;
+				height: 15rem;
+
+				h2 {
+					font-size: 1.8rem;
+					font-family: 'Lato', sans-serif;
+					margin-bottom: 1rem;
+				}
+
+				p {
+					font-size: 1.4rem;
+					font-family: 'Lato', sans-serif;
+				}
+			}
+
+			.sns {
+				a {
+					display: inline-block;
+					width: 2rem;
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}
+#map {
+	width: 100%;
+	height: 50rem;
+}
+
+@include tablet {
+	.location {
+		.inner {
+			.rightDeco {
+				display: none;
+			}
+
+			.locationBox {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+
+				div {
+					width: calc(100% / 2);
+					margin-bottom: 2rem;
+					height: 10rem;
+				}
+			}
+		}
+	}
+	#map {
+		height: 30rem;
+	}
+}
+
+@include mobile {
+	.location {
+		.inner {
+			.locationBox {
+				div {
+					width: 100%;
+					height: auto;
+					margin-bottom: 5rem;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
