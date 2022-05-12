@@ -49,7 +49,7 @@ function Location() {
 
 	return (
 		<>
-			<Layout name={'location'}>
+			<Layout name={'location'} bgImage={`${path}/images/figureBg.jpg`}>
 				<div className='rightDeco'>
 					<img className='deco' src={`${path}/images/locationDeco.png`} />
 				</div>

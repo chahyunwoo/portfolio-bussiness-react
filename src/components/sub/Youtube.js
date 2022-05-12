@@ -1,12 +1,16 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
+
 function Youtube() {
+	const pop = useRef(null);
+
 	const [videos, setVideos] = useState([]);
-	const [popup, setPopup] = useState(false);
 	const [index, setIndex] = useState(0);
 
 	useEffect(() => {
@@ -20,22 +24,22 @@ function Youtube() {
 		});
 	}, []);
 
-	const onPopup = (index) => {
-		setPopup((prev) => !prev);
-		setIndex(index);
-	};
-
 	return (
 		<>
 			<Layout name={'youtube'}>
 				<div className='videosWrap'>
-					{videos.map((video, index) => {
-						const idx = (index + 1).toString();
+					{videos.map((video, idx) => {
+						const idxTit = (idx + 1).toString();
 
 						return (
-							<article key={index} onClick={() => onPopup(index)}>
+							<article
+								key={idx}
+								onClick={() => {
+									pop.current.open();
+									setIndex(idx);
+								}}>
 								<h2>{`salt aewol #${
-									idx.length < 2 ? idx.padStart(2, '0') : idx
+									idxTit.length < 2 ? idxTit.padStart(2, '0') : idxTit
 								}`}</h2>
 								<div className='pic'>
 									<img
@@ -44,7 +48,7 @@ function Youtube() {
 									/>
 								</div>
 								<div className='desc'>
-									<p>{idx.length < 2 ? idx.padStart(2, '0') : idx}</p>
+									<p>{idxTit.length < 2 ? idxTit.padStart(2, '0') : idxTit}</p>
 									<span>{video.snippet.publishedAt.split('T')[0]}</span>
 								</div>
 							</article>
@@ -53,13 +57,18 @@ function Youtube() {
 				</div>
 			</Layout>
 
-			{popup ? (
-				<Popup setPopup={setPopup}>
-					<iframe
-						src={`https://www.youtube.com/embed/${videos[index].snippet.resourceId.videoId}`}
-						frameBorder='0'></iframe>
-				</Popup>
-			) : null}
+			<Popup ref={pop}>
+				{videos.length !== 0 ? (
+					<>
+						<iframe
+							src={`https://www.youtube.com/embed/${videos[index].snippet.resourceId.videoId}`}
+							frameborder='0'></iframe>
+						<span className='btnClose' onClick={() => pop.current.close()}>
+            <FontAwesomeIcon icon={faX} />
+						</span>
+					</>
+				) : null}
+			</Popup>
 		</>
 	);
 }

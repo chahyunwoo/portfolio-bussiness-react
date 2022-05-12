@@ -1,0 +1,97 @@
+.gallery {
+	.galleryBg {
+		width: 100%;
+
+		img {
+			@include objectFit;
+			opacity: 0.4;
+			object-position: bottom;
+			filter: blur(1rem);
+		}
+	}
+
+	.inner {
+		.loading {
+			position: absolute;
+			width: 8rem;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.frame {
+			transform: translateY(20rem);
+			opacity: 0;
+			transition: 1s;
+
+			&.on {
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			&:after {
+				@include clear;
+			}
+
+			article {
+				width: 25%;
+				float: left;
+				padding: 1rem;
+
+				.pictureWrap {
+					width: 100%;
+					padding: 1rem;
+
+					> p {
+						font-size: 1.4rem;
+						margin-bottom: 1rem;
+						font-family: 'Lato', sans-serif;
+						color: $colorBlack;
+					}
+
+					.pic {
+						width: 100%;
+						margin-bottom: 1rem;
+						cursor: pointer;
+
+						img {
+							@include objectFit;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.gallery {
+		.inner {
+			.loading {
+				width: 6rem;
+			}
+
+			.frame {
+				article {
+					width: 33.333%;
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.gallery {
+		.inner {
+			.loading {
+				width: 4rem;
+			}
+
+			.frame {
+				article {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
