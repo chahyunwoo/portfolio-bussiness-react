@@ -47,6 +47,132 @@
 			font-size: 2rem;
 			padding: 1rem 0;
 		}
+
+		.showBox {
+			margin-top: 5rem;
+
+			article {
+				background-color: #eee;
+				margin-bottom: 3rem;
+				width: 100%;
+				padding: 2rem;
+
+				.title {
+					@include clear;
+
+					h2 {
+						font-size: 1.8rem;
+						padding-bottom: 2rem;
+						color: $colorBlack;
+						font-family: 'Lato', sans-serif;
+						letter-spacing: 1px;
+						float: left;
+					}
+
+					.btns {
+						float: right;
+
+						.edit {
+							margin-right: 1rem;
+							border-radius: 50%;
+							width: 3rem;
+							height: 3rem;
+							background-color: $colorWhite;
+							color: $colorBlack;
+							transition: 0.35s;
+							font-size: 1.4rem;
+
+							&:hover {
+								color: orange;
+							}
+						}
+
+						.delete {
+							border-radius: 50%;
+							width: 3rem;
+							height: 3rem;
+							background-color: $colorWhite;
+							color: $colorBlack;
+							transition: 0.35s;
+							font-size: 1.4rem;
+
+							&:hover {
+								color: orange;
+							}
+						}
+					}
+				}
+
+				.comments {
+					p {
+						font-size: 1.4rem;
+						color: $colorBlack;
+						font-family: 'Lato', sans-serif;
+					}
+				}
+
+				.editTitle {
+					@include clear;
+
+					input {
+						font-size: 1.6rem;
+						padding: 0.5rem 0 0.5rem 0.5rem;
+						color: $colorBlack;
+						font-family: 'Lato', sans-serif;
+						margin-bottom: 2rem;
+						letter-spacing: 1px;
+						float: left;
+						border: 0;
+						outline: none;
+					}
+
+					.editBtns {
+						float: right;
+
+						.cancel {
+							margin-right: 1rem;
+							border-radius: 50%;
+							width: 3rem;
+							height: 3rem;
+							background-color: $colorWhite;
+							color: $colorBlack;
+							transition: 0.35s;
+							font-size: 1.4rem;
+
+							&:hover {
+								color: orange;
+							}
+						}
+
+						.confirm {
+							border-radius: 50%;
+							width: 3rem;
+							height: 3rem;
+							background-color: $colorWhite;
+							color: $colorBlack;
+							transition: 0.35s;
+							font-size: 1.4rem;
+
+							&:hover {
+								color: orange;
+							}
+						}
+					}
+				}
+
+				.editComments {
+					textarea {
+						border: 0;
+						font-size: 1.4rem;
+						color: $colorBlack;
+						font-family: 'Lato', sans-serif;
+						resize: none;
+						padding: 0.5rem 0 0.5rem 0.5rem;
+						outline: none;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -55,7 +181,7 @@
 	margin: 0 auto;
 	background-color: #ddd;
 	padding: 5rem 3rem 3rem;
-  position: relative;
+	position: relative;
 
 	.inputBox {
 		.labelWrap {
@@ -86,25 +212,24 @@
 
 		.btnReset,
 		.btnCreate {
-      width: 49%;
-      color: $colorBlack;
-      font-family: 'Lato', sans-serif;
-      border: 1px solid $colorBlack;
-      padding: 1rem 0;
-      margin-right: 2%;
+			width: 49%;
+			color: $colorBlack;
+			font-family: 'Lato', sans-serif;
+			border: 1px solid $colorBlack;
+			padding: 1rem 0;
+			margin-right: 2%;
 		}
 
-    .btnCreate {
-      margin-right: 0;
-    }
-
+		.btnCreate {
+			margin-right: 0;
+		}
 	}
 
-  .btnClose_community {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-  }
+	.btnClose_community {
+		position: absolute;
+		top: 3rem;
+		right: 3rem;
+		font-size: 1.6rem;
+		cursor: pointer;
+	}
 }
