@@ -1,0 +1,110 @@
+.community {
+	.inner {
+		.communityVisual {
+			padding-bottom: 5rem;
+			margin-bottom: 5rem;
+			border-bottom: 1px solid $colorBlack;
+
+			> .wrap {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				.pic {
+					width: 30%;
+
+					img {
+						@include objectFit;
+					}
+				}
+
+				.desc {
+					width: 60%;
+					display: flex;
+					align-content: center;
+					flex-wrap: wrap;
+
+					.descTitle {
+						font-size: 8rem;
+						font-family: 'Lato', sans-serif;
+						font-weight: 100;
+						margin-bottom: 1rem;
+					}
+
+					.descContent {
+						font-size: 1.6rem;
+						line-height: 1.4;
+						font-family: 'Lato', sans-serif;
+					}
+				}
+			}
+		}
+
+		.BtnWrite {
+			width: 100%;
+			border: 1px solid $colorBlack;
+			font-family: 'Lato', sans-serif;
+			font-size: 2rem;
+			padding: 1rem 0;
+		}
+	}
+}
+
+.writeBox {
+	width: 35rem;
+	margin: 0 auto;
+	background-color: #ddd;
+	padding: 5rem 3rem 3rem;
+  position: relative;
+
+	.inputBox {
+		.labelWrap {
+			margin-bottom: 1rem;
+
+			label {
+				font-size: 1.6rem;
+				font-family: 'Lato', sans-serif;
+			}
+		}
+
+		input {
+			width: 100%;
+			border: 0;
+			padding: 0.5rem 0;
+			margin-bottom: 2rem;
+			outline: none;
+		}
+
+		textarea {
+			width: 100%;
+			border: 0;
+			padding: 0.5rem 0;
+			outline: none;
+			resize: none;
+			margin-bottom: 2rem;
+		}
+
+		.btnReset,
+		.btnCreate {
+      width: 49%;
+      color: $colorBlack;
+      font-family: 'Lato', sans-serif;
+      border: 1px solid $colorBlack;
+      padding: 1rem 0;
+      margin-right: 2%;
+		}
+
+    .btnCreate {
+      margin-right: 0;
+    }
+
+	}
+
+  .btnClose_community {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+}

@@ -7,7 +7,7 @@ import Visual from './components/main/Visual';
 import Content from './components/main/Content';
 
 import Rooms from './components/sub/Rooms';
-import Faq from './components/sub/Faq';
+import Community from './components/sub/Community';
 import Gallery from './components/sub/Gallery';
 import Youtube from './components/sub/Youtube';
 import Join from './components/sub/Join';
@@ -33,7 +33,7 @@ function App() {
 			<Route path='/rooms' component={Rooms} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/youtube' component={Youtube} />
-			<Route path='/faq' component={Faq} />
+			<Route path='/community' component={Community} />
 			<Route path='/location' component={Location} />
 			<Route path='/join' component={Join} />
 

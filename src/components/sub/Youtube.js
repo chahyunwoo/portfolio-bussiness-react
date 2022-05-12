@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 
 function Youtube() {
+	const path = process.env.PUBLIC_URL;
+
 	const pop = useRef(null);
 
 	const [videos, setVideos] = useState([]);
@@ -26,7 +28,7 @@ function Youtube() {
 
 	return (
 		<>
-			<Layout name={'youtube'}>
+			<Layout name={'youtube'} bgImage={`${path}/images/youtubeBg.jpg`}>
 				<div className='videosWrap'>
 					{videos.map((video, idx) => {
 						const idxTit = (idx + 1).toString();
@@ -64,7 +66,7 @@ function Youtube() {
 							src={`https://www.youtube.com/embed/${videos[index].snippet.resourceId.videoId}`}
 							frameborder='0'></iframe>
 						<span className='btnClose' onClick={() => pop.current.close()}>
-            <FontAwesomeIcon icon={faX} />
+							<FontAwesomeIcon icon={faX} />
 						</span>
 					</>
 				) : null}

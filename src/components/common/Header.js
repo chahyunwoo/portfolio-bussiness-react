@@ -36,8 +36,8 @@ function Header({ type }) {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink activeStyle={active} to='/faq'>
-							FAQ
+						<NavLink activeStyle={active} to='/community'>
+							COMMUNITY
 						</NavLink>
 					</li>
 					<li>

@@ -31,8 +31,9 @@ function Gallery() {
 			setItems(json.data.photos.photo);
 		});
 
+    frame.current.classList.add('on');
+    
 		setTimeout(() => {
-			frame.current.classList.add('on');
 			setLoading(false);
 		}, 1000);
 	};

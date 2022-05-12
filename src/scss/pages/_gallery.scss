@@ -13,7 +13,7 @@
 	.inner {
 		.loading {
 			position: absolute;
-			width: 8rem;
+			width: 16rem;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -38,6 +38,16 @@
 				float: left;
 				padding: 1rem;
 
+        &:hover {
+          .pictureWrap {
+            .pic {
+              img {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
 				.pictureWrap {
 					width: 100%;
 					padding: 1rem;
@@ -56,6 +66,7 @@
 
 						img {
 							@include objectFit;
+              opacity: 0.75;
 						}
 					}
 				}
@@ -68,7 +79,7 @@
 	.gallery {
 		.inner {
 			.loading {
-				width: 6rem;
+				width: 14rem;
 			}
 
 			.frame {
@@ -84,7 +95,7 @@
 	.gallery {
 		.inner {
 			.loading {
-				width: 4rem;
+				width: 12rem;
 			}
 
 			.frame {

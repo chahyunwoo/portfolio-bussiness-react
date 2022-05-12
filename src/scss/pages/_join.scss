@@ -1,0 +1,103 @@
+.join {
+  .joinBg {
+    width: 100%;
+
+    img {
+      @include objectFit;
+    }
+  }
+
+	.inner {
+    > h1 {
+      text-align: center;
+      text-transform: uppercase;
+
+      &:after {
+        display: none;
+      }
+    }
+
+		form {
+			fieldset {
+				border: none;
+			}
+
+			.joinWrap {
+				width: 50%;
+				margin: 3rem auto 3rem;
+
+				.inputBox {
+					width: 100%;
+					margin-bottom: 5rem;
+
+					.labelWrap {
+						label {
+							font-size: 2rem;
+							font-family: 'Lato', sans-serif;
+						}
+					}
+
+					input[type='text'],
+					input[type='password'],
+					input[type='number'] {
+						border: 0;
+						border-bottom: 1px solid $colorBlack;
+						width: 100%;
+						font-size: 1.6rem;
+						padding: 2rem 0 1rem 0.5rem;
+						outline: none;
+						transition: 0.5s;
+
+						&:focus {
+							border-bottom: 1px solid orange;
+						}
+					}
+
+					input[type='number']::-webkit-outer-spin-button,
+					input[type='number']::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+					}
+
+          input[type=submit] {
+            width: 100%;
+            padding: 1.5rem 0;
+            background-color: transparent;
+            border: 1px solid $colorBlack;
+            cursor: pointer;
+          }
+
+          .err {
+            margin-top: 1rem;
+            display: inline-block;
+            color: orange;
+            font-size: 1.4rem;
+          }
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+  .join {
+    .inner {
+      form {
+        .joinWrap {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .join {
+    .inner {
+      form {
+        .joinWrap {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

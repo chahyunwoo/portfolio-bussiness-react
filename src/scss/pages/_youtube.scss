@@ -1,4 +1,14 @@
 .youtube {
+	.youtubeBg {
+		width: 100%;
+
+		img {
+			@include objectFit;
+			opacity: 0.6;
+			object-position: top;
+		}
+	}
+
 	.inner {
 		.videosWrap {
 			width: 100%;
