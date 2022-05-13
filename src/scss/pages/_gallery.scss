@@ -11,6 +11,46 @@
 	}
 
 	.inner {
+		.searchBox {
+			text-align: right;
+			padding-bottom: 3rem;
+
+			input[type=text] {
+				border: 0;
+				border-bottom: 1px solid $colorBlack;
+				font-size: 1.4rem;
+				padding: 0.5rem;
+				outline: none;
+				transition: $tranDefault;
+
+				&::placeholder {
+					color: $colorLightGray;
+					font-family: $fontDefault;
+					opacity: 1;
+					visibility: visible;
+					transition: $tranDefault;
+				}
+
+				&:focus {
+					border-bottom: 1px solid $colorPoint;
+
+					&::placeholder {
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+
+			button {
+				border: 1px solid $colorBlack;
+				width: 3rem;
+				height: 3rem;
+				border-radius: 50%;
+				color: $colorBlack;
+				margin-left: 1rem;
+			}
+		}
+
 		.loading {
 			position: absolute;
 			width: 16rem;
@@ -53,9 +93,9 @@
 					padding: 1rem;
 
 					> p {
-						font-size: 1.4rem;
+						font-size: $fz16;
 						margin-bottom: 1rem;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontPoint;
 						color: $colorBlack;
 					}
 

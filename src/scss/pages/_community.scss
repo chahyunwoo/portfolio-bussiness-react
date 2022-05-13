@@ -1,4 +1,13 @@
 .community {
+	.communityBg {
+		width: 100%;
+
+		img {
+			@include objectFit;
+			opacity: 0.3;
+		}
+	}
+
 	.inner {
 		.communityVisual {
 			padding-bottom: 5rem;
@@ -26,15 +35,15 @@
 
 					.descTitle {
 						font-size: 8rem;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontPoint;
 						font-weight: 100;
 						margin-bottom: 1rem;
 					}
 
 					.descContent {
-						font-size: 1.6rem;
+						font-size: $fz16;
 						line-height: 1.4;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontDefault;
 					}
 				}
 			}
@@ -43,7 +52,7 @@
 		.BtnWrite {
 			width: 100%;
 			border: 1px solid $colorBlack;
-			font-family: 'Lato', sans-serif;
+			font-family: $fontDefault;
 			font-size: 2rem;
 			padding: 1rem 0;
 		}
@@ -64,7 +73,7 @@
 						font-size: 1.8rem;
 						padding-bottom: 2rem;
 						color: $colorBlack;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontDefault;
 						letter-spacing: 1px;
 						float: left;
 					}
@@ -79,11 +88,11 @@
 							height: 3rem;
 							background-color: $colorWhite;
 							color: $colorBlack;
-							transition: 0.35s;
+							transition: $tranDefault;
 							font-size: 1.4rem;
 
 							&:hover {
-								color: orange;
+								color: $colorPoint;
 							}
 						}
 
@@ -93,11 +102,11 @@
 							height: 3rem;
 							background-color: $colorWhite;
 							color: $colorBlack;
-							transition: 0.35s;
+							transition: $tranDefault;
 							font-size: 1.4rem;
 
 							&:hover {
-								color: orange;
+								color: $colorPoint;
 							}
 						}
 					}
@@ -107,7 +116,7 @@
 					p {
 						font-size: 1.4rem;
 						color: $colorBlack;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontDefault;
 					}
 				}
 
@@ -115,10 +124,10 @@
 					@include clear;
 
 					input {
-						font-size: 1.6rem;
+						font-size: $fz16;
 						padding: 0.5rem 0 0.5rem 0.5rem;
 						color: $colorBlack;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontDefault;
 						margin-bottom: 2rem;
 						letter-spacing: 1px;
 						float: left;
@@ -136,11 +145,11 @@
 							height: 3rem;
 							background-color: $colorWhite;
 							color: $colorBlack;
-							transition: 0.35s;
+							transition: $tranDefault;
 							font-size: 1.4rem;
 
 							&:hover {
-								color: orange;
+								color: $colorPoint;
 							}
 						}
 
@@ -150,11 +159,11 @@
 							height: 3rem;
 							background-color: $colorWhite;
 							color: $colorBlack;
-							transition: 0.35s;
+							transition: $tranDefault;
 							font-size: 1.4rem;
 
 							&:hover {
-								color: orange;
+								color: $colorPoint;
 							}
 						}
 					}
@@ -165,7 +174,7 @@
 						border: 0;
 						font-size: 1.4rem;
 						color: $colorBlack;
-						font-family: 'Lato', sans-serif;
+						font-family: $fontDefault;
 						resize: none;
 						padding: 0.5rem 0 0.5rem 0.5rem;
 						outline: none;
@@ -188,8 +197,8 @@
 			margin-bottom: 1rem;
 
 			label {
-				font-size: 1.6rem;
-				font-family: 'Lato', sans-serif;
+				font-size: $fz16;
+				font-family: $fontPoint;
 			}
 		}
 
@@ -214,7 +223,7 @@
 		.btnCreate {
 			width: 49%;
 			color: $colorBlack;
-			font-family: 'Lato', sans-serif;
+			font-family: $fontDefault;
 			border: 1px solid $colorBlack;
 			padding: 1rem 0;
 			margin-right: 2%;
@@ -229,7 +238,7 @@
 		position: absolute;
 		top: 3rem;
 		right: 3rem;
-		font-size: 1.6rem;
+		font-size: $fz16;
 		cursor: pointer;
 	}
 }

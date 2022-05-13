@@ -1,6 +1,12 @@
 .logo {
-  font-family: 'Cormorant', serif;
+  font-family: $fontLogo;
 	font-weight: 400;
-	font-size: 2.4rem;
+	font-size: $fz24;
 	color: $colorBlack;
+}
+
+.pageTitle {
+	font-family: $fontPoint;
+	font-size: $fzTitle;
+	text-transform: uppercase;
 }

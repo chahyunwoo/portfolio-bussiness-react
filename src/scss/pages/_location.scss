@@ -40,14 +40,16 @@
 				height: 15rem;
 
 				h2 {
-					font-size: 1.8rem;
-					font-family: 'Lato', sans-serif;
+					font-size: 2rem;
+					font-family: $fontPoint;
 					margin-bottom: 1rem;
+					color: $colorBlack;
 				}
 
 				p {
 					font-size: 1.4rem;
-					font-family: 'Lato', sans-serif;
+					font-family: $fontDefault;
+					color: $colorBlack;
 				}
 			}
 
@@ -56,6 +58,7 @@
 					display: inline-block;
 					width: 2rem;
 					font-size: 1.4rem;
+					color: $colorBlack;
 				}
 			}
 		}

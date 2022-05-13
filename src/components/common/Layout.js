@@ -12,9 +12,14 @@ function Layout({ name, children, bgImage }) {
 		<section className={`content ${name}`} ref={frame}>
 			<figure className={`bg ${name}Bg`}>
 				<img src={bgImage} />
+				<div className="inner">
+				<h1 className='pageTitle'>
+					{name}
+				</h1>
+				</div>
 			</figure>
 			<div className='inner'>
-				<h1>{name}</h1>
+				
 				{children}
 			</div>
 		</section>

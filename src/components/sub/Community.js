@@ -109,7 +109,7 @@ function Community() {
 
 	return (
 		<>
-			<Layout name={'community'}>
+			<Layout name={'community'} bgImage={`${path}/images/communityBg.jpg`}>
 				<div className='communityVisual'>
 					<div className='wrap'>
 						<div className='pic'>
@@ -198,7 +198,7 @@ function Community() {
 				</div>
 			</Layout>
 
-			<Popup ref={pop} className='communityPopUp'>
+			<Popup ref={pop}>
 				<div className='writeBox'>
 					<div className='inputBox'>
 						<div className='labelWrap'>
