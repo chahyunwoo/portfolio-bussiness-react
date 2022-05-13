@@ -22,7 +22,20 @@ function Community() {
 
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		return JSON.parse(data);
+
+		const dummyPosts = [
+			{ title: 'Hello5', content: 'Here comes description in detail.' },
+			{ title: 'Hello4', content: 'Here comes description in detail.' },
+			{ title: 'Hello3', content: 'Here comes description in detail.' },
+			{ title: 'Hello2', content: 'Here comes description in detail.' },
+			{ title: 'Hello1', content: 'Here comes description in detail.' },
+		];
+
+		if (data) {
+			return JSON.parse(data);
+		} else {
+			return dummyPosts;
+		}
 	};
 
 	const [posts, setPosts] = useState(getLocalData());
@@ -131,14 +144,18 @@ function Community() {
 												ref={editInput}
 											/>
 											<div className='editBtns'>
-												<button className='cancel' onClick={() => {
-													disableUpdate(idx)
-												}}>
+												<button
+													className='cancel'
+													onClick={() => {
+														disableUpdate(idx);
+													}}>
 													<FontAwesomeIcon icon={faX} />
 												</button>
-												<button className='confirm' onClick={() => {
-													updatePost(idx)
-												}}>
+												<button
+													className='confirm'
+													onClick={() => {
+														updatePost(idx);
+													}}>
 													<FontAwesomeIcon icon={faCheck} />
 												</button>
 											</div>
@@ -156,9 +173,11 @@ function Community() {
 										<div className='title'>
 											<h2>{post.title}</h2>
 											<div className='btns'>
-												<button className='edit' onClick={() => {
-													if (allowed) enableUpdate(idx)
-												}}>
+												<button
+													className='edit'
+													onClick={() => {
+														if (allowed) enableUpdate(idx);
+													}}>
 													<FontAwesomeIcon icon={faPen} />
 												</button>
 												<button
