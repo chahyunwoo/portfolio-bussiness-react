@@ -1,0 +1,191 @@
+#videos {
+	width: 100%;
+	margin-top: 5rem;
+	padding: 3vw 0;
+	position: relative;
+
+	.videosBg {
+		position: absolute;
+		width: 100%;
+		height: 50%;
+
+		.bgPoint {
+			position: absolute;
+			width: calc((100% - 1180px) / 2);
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #e4eef5;
+			z-index: 3;
+		}
+	}
+
+	.bgPointLeft {
+		position: absolute;
+		width: calc((100% - 1180px) / 2);
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: $colorWhite;
+		z-index: 2;
+	}
+
+	.inner {
+		@include inner;
+		margin-bottom: 10rem;
+
+		.title {
+			position: relative;
+			margin-top: 5rem;
+			margin-bottom: 5rem;
+
+			h1 {
+				font-family: $fontPoint;
+				font-size: $fz36;
+				display: inline-block;
+			}
+
+			p {
+				font-family: $fontDefault;
+				font-size: $fz16;
+				display: inline-block;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.btnDetail {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				color: $colorPoint;
+				font-family: $fontPoint;
+				font-size: $fz16;
+
+				.icon {
+					margin-left: 1rem;
+				}
+			}
+		}
+
+		.youtubeSwiper {
+			overflow: visible;
+			height: 40rem;
+			position: relative;
+			z-index: 1;
+
+			.swiper-button-prev {
+				top: 3rem;
+				bottom: auto;
+				left: auto;
+				right: 3rem;
+				color: $colorBlack;
+				transform: scale(0.7);
+				opacity: 0.6;
+			}
+			.swiper-button-next {
+				top: 3rem;
+				bottom: auto;
+				right: 0;
+				color: $colorBlack;
+				transform: scale(0.7);
+				opacity: 0.6;
+			}
+
+			.swiper-slide {
+				transform: translateY(7rem);
+				transition: 1s;
+				pointer-events: none;
+
+				.pic {
+					width: 100%;
+					font-size: 0;
+
+					img {
+						@include objectFit;
+						opacity: 0.4;
+					}
+				}
+			}
+
+			.swiper-slide-active {
+				transform: translateY(0);
+				transition: 1s;
+				cursor: pointer;
+				pointer-events: all;
+
+				.pic {
+					width: 100%;
+					font-size: 0;
+
+					img {
+						@include objectFit;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	#videos {
+		background-color: #e4eef5;
+		padding: 3vw;
+		overflow: hidden;
+		position: relative;
+
+		.videosBg {
+			display: none;
+		}
+
+		.bgPointLeft {
+			display: none;
+		}
+
+		.inner {
+			width: 100%;
+			padding: 0 3rem;
+
+			.title {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				text-align: center;
+
+				h1 {
+					width: 100%;
+					display: block;
+					margin-bottom: 3rem;
+				}
+
+				p {
+					width: 100%;
+					position: relative;
+					left: 50%;
+					transform: translateX(-50%);
+					margin-bottom: 3rem;
+				}
+
+				.btnDetail {
+					position: relative;
+				}
+			}
+
+			.youtubeSwiper {
+				overflow: hidden;
+				height: 30rem;
+			}
+		}
+	}
+}
+
+@include mobile {
+  #videos {
+		.inner {
+			.youtubeSwiper {
+				height: 20rem;
+			}
+		}
+	}
+}

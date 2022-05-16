@@ -10,6 +10,36 @@
 	}
 
 	.inner {
+		.roomsTitle {
+			margin-bottom: 10rem;
+			padding-bottom: 10rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			border-bottom: 1px solid $colorLightGray;
+
+			.pic {
+				width: 50%;
+
+				img {
+					@include objectFit;
+				}
+			}
+
+			.desc {
+				width: 50%;
+				padding: 0 10rem;
+				height: 100%;
+				display: flex;
+
+				p {
+					font-family: $fontDefault;
+					font-size: 1.4rem;
+					line-height: 1.6;
+				}
+			}
+		}
+
 		.roomsList {
 			li {
 				width: 100%;
@@ -112,6 +142,21 @@
 @include tablet {
 	.rooms {
 		.inner {
+			.roomsTitle {
+				padding-bottom: 5rem;
+				margin-bottom: 5rem;
+
+				.pic {
+					width: 100%;
+					margin-bottom: 5rem;
+				}
+
+				.desc {
+					width: 100%;
+					padding: 0;
+				}
+			}
+
 			.roomsList {
 				display: flex;
 				flex-wrap: wrap;

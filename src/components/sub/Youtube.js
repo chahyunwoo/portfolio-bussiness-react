@@ -2,6 +2,7 @@ import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 
 import { useEffect, useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,19 +13,9 @@ function Youtube() {
 
 	const pop = useRef(null);
 
-	const [videos, setVideos] = useState([]);
 	const [index, setIndex] = useState(0);
 
-	useEffect(() => {
-		const key = 'AIzaSyAdo3TEXjvTi-2C_p9Z8zgbQD3uCz_JnAs';
-		const playlistId = 'PLdHIHMgBSgjLGDg3SJwV_MdhGnap-xuXg';
-		const num = 6;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-		axios.get(url).then((json) => {
-			setVideos(json.data.items);
-		});
-	}, []);
+	const videos = useSelector((store) => store.youtubeReducer.youtube)
 
 	return (
 		<>
@@ -76,4 +67,3 @@ function Youtube() {
 }
 
 export default Youtube;
-
