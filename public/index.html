@@ -7,11 +7,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>React App</title>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fe9bb0f994acd2d61111cc51afc90122"></script>
+  <style>
+    .default {
+      position: absolute;
+      top: -9999999px;
+    }
+
+    .mask {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      transition: opacity 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    .mask img {
+      width: 15%;
+    }
+
+    .mask.off {
+      opacity: 0;
+    }
+  </style>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+
+  <div class="default"></div>
+  <div class="mask">
+    <img src="https://i.pinimg.com/originals/8f/0f/1a/8f0f1a58f61495c4d27bec21c31d7a28.gif">
+  </div>
+
+  <script>
+    const imgs = [
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/bg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/communityBg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/communityVisualPic.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/figureBg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/galleryBg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/joinDecoImg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/locationDeco.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/loginBg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/mainNewsImg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/mainRoomDeco2.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/roomsBg.jpg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/roomsTitleBg.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/RoomType-1.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/RoomType-2.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/RoomType-3.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/RoomType-4.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/RoomType-5.jpeg',
+      'https://chahyunwoo.github.io/portfolio-bussiness-react/images/youtubeBg.jpg',
+    ]
+
+    const lenImg = imgs.length;
+    const defaults = document.querySelector('.default')
+    const mask = document.querySelector('.mask')
+
+    let tags = '';
+
+    createDOM();
+
+    Promise.all([loadImg()]).then((result) => {
+      if (result) {
+        mask.classList.add('off')
+
+        setTimeout(() => {
+          mask.remove()
+          defaults.remove()
+        }, 2000)
+      }
+    })
+
+    function createDOM() {
+      imgs.forEach(src => {
+        tags += `<img src=${src} />`
+      })
+
+      defaults.innerHTML = tags;
+    }
+
+    function loadImg() {
+      return new Promise((response, reject) => {
+        const imgDOM = defaults.querySelectorAll('img')
+        let countImg = 0;
+
+        imgDOM.forEach((img) => {
+          img.onload = () => {
+            countImg++
+
+            if (lenImg === countImg) {
+              loadedImg = true
+              response(loadedImg)
+            }
+          }
+        })
+      })
+    }
+  </script>
 </body>
 
 </html>

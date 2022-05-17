@@ -18,7 +18,6 @@ import 'swiper/css/navigation';
 
 function Videos() {
 	const videos = useSelector((store) => store.youtubeReducer.youtube);
-
 	const pop = useRef(null);
 
 	const [index, setIndex] = useState(0);

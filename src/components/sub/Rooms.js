@@ -1,7 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { setRooms } from '../../redux/action';
+import { useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 import Layout from '../common/Layout';
 

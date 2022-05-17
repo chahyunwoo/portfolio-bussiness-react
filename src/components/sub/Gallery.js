@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+
 import Masonry from 'react-masonry-component';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -8,46 +10,32 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 
+import * as types from '../../redux/actionType';
+
 function Gallery() {
+	const { gallery } = useSelector((store) => store.galleryReducer);
+
+	const dispatch = useDispatch();
 	const path = process.env.PUBLIC_URL;
 
 	const frame = useRef(null);
 	const pop = useRef(null);
 	const input = useRef(null);
 
-	const [items, setItems] = useState([]);
+	const [opt, setOpt] = useState({
+		type: 'user',
+		count: 24,
+		user: '195444009@N05',
+	});
 	const [loading, setLoading] = useState(true);
 	const [index, setIndex] = useState(0);
 	const [enableClick, setEnableClick] = useState(true);
 
 	const masonryOptions = { transitionDuration: '0.5s' };
 
-	const getPicture = async (option) => {
-		const key = '4612601b324a2fe5a1f5f7402bf8d87a';
-		const num = 24;
-		const initPicture = 'flickr.people.getPhotos';
-		const searchPicture = 'flickr.photos.search';
-
-		let url = '';
-
-		if (option.type === 'search') {
-			url = `https://www.flickr.com/services/rest/?method=${searchPicture}&per_page=${num}&api_key=${key}&nojsoncallback=1&format=json&tags=${option.tags}`;
-		}
-
-		if (option.type === 'user') {
-			url = `https://www.flickr.com/services/rest/?method=${initPicture}&per_page=${num}&api_key=${key}&nojsoncallback=1&format=json&user_id=195444009@N05`;
-		}
-
-		await axios.get(url).then((json) => {
-			if (json.data.photos.photo.length === 0) {
-				alert('해당 검색어의 이미지가 없습니다.');
-			}
-			setItems(json.data.photos.photo);
-		});
-
-		frame.current.classList.add('on');
-
+	const endLoading = () => {
 		setTimeout(() => {
+			frame.current.classList.add('on');
 			setLoading(false);
 			setEnableClick(true);
 		}, 1000);
@@ -68,20 +56,23 @@ function Gallery() {
 			setLoading(true);
 			frame.current.classList.remove('on');
 
-			getPicture({
+			setOpt({
 				type: 'search',
-				count: 30,
-				tags: result,
+				count: 24,
+				tag: result,
 			});
+
+			endLoading();
 		}
 	};
 
 	useEffect(() => {
-		getPicture({
-			type: 'user',
-			count: 24,
-		});
-	}, []);
+		dispatch({ type: types.GALLERY.start, opt });
+	}, [opt]);
+
+	useEffect(() => {
+		if (gallery.length !== 0) endLoading();
+	}, [gallery]);
 
 	return (
 		<>
@@ -105,7 +96,7 @@ function Gallery() {
 
 				<div className='frame' ref={frame}>
 					<Masonry elementType={'div'} options={masonryOptions}>
-						{items.map((item, index) => {
+						{gallery.map((item, index) => {
 							return (
 								<article
 									key={index}
@@ -129,10 +120,10 @@ function Gallery() {
 			</Layout>
 
 			<Popup ref={pop}>
-				{items.length !== 0 ? (
+				{gallery.length !== 0 ? (
 					<>
 						<img
-							src={`https://live.staticflickr.com/${items[index].server}/${items[index].id}_${items[index].secret}_b.jpg`}
+							src={`https://live.staticflickr.com/${gallery[index].server}/${gallery[index].id}_${gallery[index].secret}_b.jpg`}
 						/>
 						<span className='btnClose' onClick={() => pop.current.close()}>
 							<FontAwesomeIcon icon={faX} />

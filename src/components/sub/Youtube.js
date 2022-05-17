@@ -1,9 +1,8 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
 
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
