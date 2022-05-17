@@ -1,0 +1,25 @@
+.menuMo {
+	width: 20rem;
+	height: 100vh;
+	background-color: $colorWhite;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 5rem 3rem;
+	z-index: 9;
+	border-left: 1px solid $colorBlack;
+
+	#gnbMo {
+		li {
+			a {
+				font-family: $fontDefault;
+				display: inline-block;
+				width: 100%;
+				padding: 2rem 0;
+				font-size: 2rem;
+				color: $colorBlack;
+				text-align: center;
+			}
+		}
+	}
+}

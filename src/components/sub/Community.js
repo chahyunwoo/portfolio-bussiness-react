@@ -134,65 +134,70 @@ function Community() {
 				<div className='showBox'>
 					{posts.map((post, idx) => {
 						return (
-							<article key={idx}>
-								{post.enableUpdate ? (
-									<>
-										<div className='editTitle'>
-											<input
-												type='text'
-												defaultValue={post.title}
-												ref={editInput}
-											/>
-											<div className='editBtns'>
-												<button
-													className='cancel'
-													onClick={() => {
-														disableUpdate(idx);
-													}}>
-													<FontAwesomeIcon icon={faX} />
-												</button>
-												<button
-													className='confirm'
-													onClick={() => {
-														updatePost(idx);
-													}}>
-													<FontAwesomeIcon icon={faCheck} />
-												</button>
-											</div>
-										</div>
-										<div className='editComments'>
-											<textarea
-												cols='100'
-												rows='5'
-												defaultValue={post.content}
-												ref={editTextarea}></textarea>
-										</div>
-									</>
-								) : (
-									<>
-										<div className='title'>
-											<h2>{post.title}</h2>
-											<div className='btns'>
-												<button
-													className='edit'
-													onClick={() => {
-														if (allowed) enableUpdate(idx);
-													}}>
-													<FontAwesomeIcon icon={faPen} />
-												</button>
-												<button
-													className='delete'
-													onClick={() => deletePost(idx)}>
-													<FontAwesomeIcon icon={faTrashCan} />
-												</button>
-											</div>
-										</div>
-										<div className={`comments`}>
-											<p>{post.content}</p>
-										</div>
-									</>
-								)}
-							</article>
+							<>
+								<div className='showBoxWrap'>
+									<span className='numbering'><strong>#</strong> {idx + 1}</span>
+									<article key={idx}>
+										{post.enableUpdate ? (
+											<>
+												<div className='editTitle'>
+													<input
+														type='text'
+														defaultValue={post.title}
+														ref={editInput}
+													/>
+													<div className='editBtns'>
+														<button
+															className='cancel'
+															onClick={() => {
+																disableUpdate(idx);
+															}}>
+															<FontAwesomeIcon icon={faX} />
+														</button>
+														<button
+															className='confirm'
+															onClick={() => {
+																updatePost(idx);
+															}}>
+															<FontAwesomeIcon icon={faCheck} />
+														</button>
+													</div>
+												</div>
+												<div className='editComments'>
+													<textarea
+														cols='100'
+														rows='5'
+														defaultValue={post.content}
+														ref={editTextarea}></textarea>
+												</div>
+											</>
+										) : (
+											<>
+												<div className='title'>
+													<h2>{post.title}</h2>
+													<div className='btns'>
+														<button
+															className='edit'
+															onClick={() => {
+																if (allowed) enableUpdate(idx);
+															}}>
+															<FontAwesomeIcon icon={faPen} />
+														</button>
+														<button
+															className='delete'
+															onClick={() => deletePost(idx)}>
+															<FontAwesomeIcon icon={faTrashCan} />
+														</button>
+													</div>
+												</div>
+												<div className={`comments`}>
+													<p>{post.content}</p>
+												</div>
+											</>
+										)}
+									</article>
+								</div>
+							</>
 						);
 					})}
 				</div>

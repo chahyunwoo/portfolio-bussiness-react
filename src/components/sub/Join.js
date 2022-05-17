@@ -76,6 +76,9 @@ function Join() {
 	return (
 		<Layout name={'join'} bgImage={`${path}/images/loginBg.jpg`}>
 			<form onSubmit={handleSubmit}>
+				<div className="formDeco">
+					<img src={`${path}/images/joinDecoImg.jpg`} />
+				</div>
 				<fieldset>
 					<legend className='hidden'>회원가입 폼 양식</legend>
 					<div className='joinWrap'>

@@ -5,60 +5,159 @@
 		img {
 			@include objectFit;
 			opacity: 0.7;
-			object-position: bottom ;
+			object-position: bottom;
 		}
 	}
 	.inner {
-		
-		.rightDeco {
-			position: absolute;
-			top: -80%;
-			right: 0;
-			border-radius: 50%;
-			font-size: 0;
-			box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-			overflow: hidden;
+		.locationBox {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: 10rem;
+			border-bottom: 1px solid $colorBlack;
 
-			&:hover {
-				.deco {
-					transform: scale(1.1);
+			.left {
+				width: 50%;
+				display: flex;
+				flex-wrap: wrap;
+
+				div {
+					width: 50%;
+					height: 15rem;
+
+					h2 {
+						font-size: 2rem;
+						font-family: $fontPoint;
+						margin-bottom: 1rem;
+						color: $colorBlack;
+					}
+
+					p {
+						font-size: 1.4rem;
+						font-family: $fontDefault;
+						color: $colorBlack;
+					}
+				}
+
+				.sns {
+					a {
+						display: inline-block;
+						width: 2rem;
+						font-size: 1.4rem;
+						color: $colorBlack;
+					}
 				}
 			}
 
-			.deco {
-				@include objectFit;
+			.right {
+				width: 50%;
+				padding-left: 10rem;
+
+				.imgWrap {
+					width: 100%;
+					height: 30rem;
+
+					img {
+						@include objectFit;
+						opacity: 0.5;
+					}
+				}
 			}
 		}
 
-		.locationBox {
-			width: 50%;
-      display: flex;
-      flex-wrap: wrap;
+		.contact {
+			margin-top: 10rem;
+			text-align: center;
 
-			div {
-				width: 50%;
-				height: 15rem;
-
-				h2 {
-					font-size: 2rem;
-					font-family: $fontPoint;
-					margin-bottom: 1rem;
-					color: $colorBlack;
-				}
-
-				p {
-					font-size: 1.4rem;
-					font-family: $fontDefault;
-					color: $colorBlack;
-				}
+			h1 {
+				font-family: $fontPoint;
+				font-size: $fz36;
+				padding-bottom: 5rem;
 			}
 
-			.sns {
-				a {
-					display: inline-block;
-					width: 2rem;
-					font-size: 1.4rem;
-					color: $colorBlack;
+			p {
+				font-family: $fontDefault;
+				font-size: $fz14;
+				line-height: 1.6;
+			}
+
+			form {
+				margin-top: 5rem;
+
+				fieldset {
+					border: none;
+
+					.boxWrap {
+						width: 80%;
+						margin: 0 auto;
+						display: flex;
+						flex-wrap: wrap;
+						gap: 2%;
+
+						.inputBox {
+							width: 49%;
+
+							label {
+								display: block;
+								font-family: $fontPoint;
+								font-size: $fz16;
+								text-align: left;
+								margin-bottom: 1rem;
+							}
+
+							input[type='text'] {
+								width: 100%;
+								border: 0;
+								border-bottom: 1px solid $colorBlack;
+								font-size: $fz16;
+								padding: 0.5rem 0.3rem;
+								outline: none;
+								background-color: transparent;
+							}
+						}
+
+						.textBox {
+							width: 100%;
+							margin-top: 2rem;
+
+							label {
+								display: block;
+								font-family: $fontPoint;
+								font-size: $fz16;
+								text-align: left;
+								margin-bottom: 1rem;
+							}
+
+							textarea {
+								width: 100%;
+								resize: none;
+								border: 1px solid $colorBlack;
+								font-size: $fz16;
+								padding: 0.5rem 0.3rem;
+								outline: none;
+								background-color: transparent;
+							}
+						}
+
+						.submitBox {
+							width: 100%;
+							margin-top: 2rem;
+
+							input[type='submit'] {
+								background-color: transparent;
+								font-family: $fontPoint;
+								border: 1px solid $colorBlack;
+								padding: 1rem 2rem;
+								cursor: pointer;
+								transition: $tranDefault;
+
+								&:hover {
+									border: 1px solid $colorPoint;
+									background-color: $colorPoint;
+									color: $colorWhite;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -72,19 +171,30 @@
 @include tablet {
 	.location {
 		.inner {
-			.rightDeco {
-				display: none;
+			.locationBox {
+				.left {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+
+					div {
+						text-align: center;
+					}
+				}
+
+				.right {
+					width: 100%;
+					padding-left: 0;
+				}
 			}
 
-			.locationBox {
-				width: 100%;
-				display: flex;
-				flex-wrap: wrap;
-
-				div {
-					width: calc(100% / 2);
-					margin-bottom: 2rem;
-					height: 10rem;
+			.contact {
+				form {
+					fieldset {
+						.boxWrap {
+							width: 100%;
+						}
+					}
 				}
 			}
 		}
@@ -98,11 +208,35 @@
 	.location {
 		.inner {
 			.locationBox {
-				div {
+				padding-bottom: 5rem;
+
+				.left {
 					width: 100%;
-					height: auto;
-					margin-bottom: 5rem;
-					text-align: center;
+					display: flex;
+					flex-wrap: wrap;
+
+					div {
+						width: 100%;
+						height: auto;
+						padding: 3rem 0;
+					}
+				}
+			}
+
+			.contact {
+				margin-top: 5rem;
+
+				form {
+					fieldset {
+						.boxWrap {
+							width: 100%;
+
+							.inputBox {
+								width: 100%;
+								margin-bottom: 2rem;
+							}
+						}
+					}
 				}
 			}
 		}

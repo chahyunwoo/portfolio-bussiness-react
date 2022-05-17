@@ -11,15 +11,35 @@
   }
 
 	.inner {
-
 		form {
+      position: relative;
+      padding-bottom: 7rem;
+      font-size: 0;
+
+      .formDeco {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+
+        img {
+          @include objectFit;
+          opacity: 0.7;
+        }
+      }
+
 			fieldset {
 				border: none;
 			}
 
 			.joinWrap {
 				width: 50%;
+        border: 1rem solid #e4eef5;
+        padding: 10rem 10rem 5rem 10rem;
+        box-sizing: content-box;
 				margin: 3rem auto 3rem;
+        background-color: $colorWhite;
+        position: relative;
 
 				.inputBox {
 					width: 100%;
@@ -76,9 +96,17 @@
 @include tablet {
   .join {
     .inner {
+      width: 100%;
+      padding: 0 3rem;
       form {
+        .formDeco {
+          display: none;
+        }
+
         .joinWrap {
           width: 75%;
+          box-sizing: border-box;
+          padding: 3rem;
         }
       }
     }

@@ -60,124 +60,170 @@
 		.showBox {
 			margin-top: 5rem;
 
-			article {
-				background-color: #eee;
+			.showBoxWrap {
+				display: flex;
+				align-items: center;
 				margin-bottom: 3rem;
-				width: 100%;
-				padding: 2rem;
 
-				.title {
-					@include clear;
+				.numbering {
+					width: 10%;
+					display: inline-block;
+					font-family: $fontPoint;
+					font-size: 4.8rem;
+					text-align: center;
+					font-weight: 100;
+					color: $colorPoint;
+					position: relative;
 
-					h2 {
-						font-size: 1.8rem;
-						padding-bottom: 2rem;
-						color: $colorBlack;
-						font-family: $fontDefault;
-						letter-spacing: 1px;
-						float: left;
+					&:before {
+						content: '';
+						position: absolute;
+						width: 5rem;
+						height: 5rem;
+						border-radius: 50%;
+						background-color: $colorPoint;
+						bottom: 0;
+						left: 0;
+						opacity: 0.3;
 					}
 
-					.btns {
-						float: right;
-
-						.edit {
-							margin-right: 1rem;
-							border-radius: 50%;
-							width: 3rem;
-							height: 3rem;
-							background-color: $colorWhite;
-							color: $colorBlack;
-							transition: $tranDefault;
-							font-size: 1.4rem;
-
-							&:hover {
-								color: $colorPoint;
-							}
-						}
-
-						.delete {
-							border-radius: 50%;
-							width: 3rem;
-							height: 3rem;
-							background-color: $colorWhite;
-							color: $colorBlack;
-							transition: $tranDefault;
-							font-size: 1.4rem;
-
-							&:hover {
-								color: $colorPoint;
-							}
-						}
+					strong {
+						font-size: 6.4rem;
+						font-weight: 100;
 					}
 				}
 
-				.comments {
-					p {
-						font-size: 1.4rem;
-						color: $colorBlack;
-						font-family: $fontDefault;
-					}
-				}
+				article {
+					background: linear-gradient(to left, #eee, #fff);
+					width: 90%;
+					padding: 2rem;
+					display: inline-block;
+					position: relative;
 
-				.editTitle {
-					@include clear;
-
-					input {
-						font-size: $fz16;
-						padding: 0.5rem 0 0.5rem 0.5rem;
-						color: $colorBlack;
-						font-family: $fontDefault;
-						margin-bottom: 2rem;
-						letter-spacing: 1px;
-						float: left;
-						border: 0;
-						outline: none;
+					&:before {
+						content: '';
+						position: absolute;
+						width: 1px;
+						height: 3rem;
+						background-color: $colorLightGray;
+						top: 50%;
+						transform: translateY(-50%);
+						left: 0;
 					}
 
-					.editBtns {
-						float: right;
+					.title {
+						@include clear;
 
-						.cancel {
-							margin-right: 1rem;
-							border-radius: 50%;
-							width: 3rem;
-							height: 3rem;
-							background-color: $colorWhite;
+						h2 {
+							font-size: 1.8rem;
+							padding-bottom: 2rem;
 							color: $colorBlack;
-							transition: $tranDefault;
-							font-size: 1.4rem;
-
-							&:hover {
-								color: $colorPoint;
-							}
+							font-family: $fontDefault;
+							letter-spacing: 1px;
+							float: left;
 						}
 
-						.confirm {
-							border-radius: 50%;
-							width: 3rem;
-							height: 3rem;
-							background-color: $colorWhite;
-							color: $colorBlack;
-							transition: $tranDefault;
-							font-size: 1.4rem;
+						.btns {
+							float: right;
 
-							&:hover {
-								color: $colorPoint;
+							.edit {
+								margin-right: 1rem;
+								border-radius: 50%;
+								width: 3rem;
+								height: 3rem;
+								background-color: $colorWhite;
+								color: $colorBlack;
+								transition: $tranDefault;
+								font-size: 1.4rem;
+
+								&:hover {
+									color: $colorPoint;
+								}
+							}
+
+							.delete {
+								border-radius: 50%;
+								width: 3rem;
+								height: 3rem;
+								background-color: $colorWhite;
+								color: $colorBlack;
+								transition: $tranDefault;
+								font-size: 1.4rem;
+
+								&:hover {
+									color: $colorPoint;
+								}
 							}
 						}
 					}
-				}
 
-				.editComments {
-					textarea {
-						border: 0;
-						font-size: 1.4rem;
-						color: $colorBlack;
-						font-family: $fontDefault;
-						resize: none;
-						padding: 0.5rem 0 0.5rem 0.5rem;
-						outline: none;
+					.comments {
+						p {
+							font-size: 1.4rem;
+							color: $colorBlack;
+							font-family: $fontDefault;
+						}
+					}
+
+					.editTitle {
+						@include clear;
+
+						input {
+							font-size: $fz16;
+							padding: 0.5rem 0 0.5rem 0.5rem;
+							color: $colorBlack;
+							font-family: $fontDefault;
+							margin-bottom: 2rem;
+							letter-spacing: 1px;
+							float: left;
+							border: 0;
+							outline: none;
+						}
+
+						.editBtns {
+							float: right;
+
+							.cancel {
+								margin-right: 1rem;
+								border-radius: 50%;
+								width: 3rem;
+								height: 3rem;
+								background-color: $colorWhite;
+								color: $colorBlack;
+								transition: $tranDefault;
+								font-size: 1.4rem;
+
+								&:hover {
+									color: $colorPoint;
+								}
+							}
+
+							.confirm {
+								border-radius: 50%;
+								width: 3rem;
+								height: 3rem;
+								background-color: $colorWhite;
+								color: $colorBlack;
+								transition: $tranDefault;
+								font-size: 1.4rem;
+
+								&:hover {
+									color: $colorPoint;
+								}
+							}
+						}
+					}
+
+					.editComments {
+						textarea {
+							border: 0;
+							font-size: 1.4rem;
+							color: $colorBlack;
+							font-family: $fontDefault;
+							resize: none;
+							padding: 0.5rem 0 0.5rem 0.5rem;
+							outline: none;
+						}
 					}
 				}
 			}
@@ -240,5 +286,31 @@
 		right: 3rem;
 		font-size: $fz16;
 		cursor: pointer;
+	}
+}
+
+@include tablet {
+	.community {
+		.inner {
+			width: 100%;
+
+			.showBox {
+				.showBoxWrap {
+					flex-wrap: wrap;
+
+					.numbering {
+						display: none;
+					}
+
+					article {
+						width: 100%;
+
+						&:before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	}
 }
