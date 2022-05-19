@@ -33,7 +33,7 @@ function News() {
 
 	return (
 		<>
-			<section id='news'>
+			<section id='news' className='myScroll'>
 				<div className='inner'>
 					<div className='newsBox'>
 						<div className='pic'>

@@ -11,6 +11,9 @@
 			width: 50%;
 			padding-right: 10rem;
 			font-family: $fontPoint;
+			transform: translateX(-50%);
+			opacity: 0;
+			transition: $tranSlow;
 
 			.wrap {
         position: relative;
@@ -70,6 +73,9 @@
 
 		.roomBox {
 			width: 50%;
+			transform: translateX(50%);
+			opacity: 0;
+			transition: $tranSlow;
 
 			.roomSwiper {
 				width: 100%;
@@ -102,6 +108,23 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+#roomInfo.myScroll {
+	&.on {
+		.inner {
+			.roomDesc {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			.roomBox {
+				opacity: 1;
+				transform: translateX(0);
+
 			}
 		}
 	}

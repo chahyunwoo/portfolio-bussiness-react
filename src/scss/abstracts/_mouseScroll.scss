@@ -4,15 +4,15 @@ $colorBg: #fff;
 $colorOutline: #ccc;
 $colorOutlineFade: $colorBlack;
 
-$widthMouse: 52px;
-$heightMouse: 88px;
-$borderMouse: 6px;
+$widthMouse: 30px;
+$heightMouse: 59px;
+$borderMouse: 3px;
 
 $posMouse: 8px;
 $posText: 2px;
 
-$sizeTrackball: 10px;
-$posTrackball: 20px;
+$sizeTrackball: 5px;
+$posTrackball: 15px;
 $shrinkTrackball: 0.4;
 
 $animDuration: 5s;
@@ -28,24 +28,24 @@ $animDuration: 5s;
 }
 
 .scrollEvent {
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
+	position: absolute;
+	bottom: 5rem;
+	left: 50%;
+	transform: translateX(-50%);
 
 	.scroll {
-    font-size: $fz16;
+		font-size: $fz14;
 		font-family: 'Cabin', sans-serif;
 		letter-spacing: 0.5rem;
 		text-indent: 12px;
 		color: $colorOutline;
 		animation: colorText $animDuration ease-out infinite,
 			nudgeText $animDuration ease-out infinite;
-      padding-top: 3rem;
+		padding-top: 1rem;
 	}
 
 	.mouse {
-    margin: 0 auto;
+		margin: 0 auto;
 		@include bgGradient;
 		position: relative;
 		width: $widthMouse;

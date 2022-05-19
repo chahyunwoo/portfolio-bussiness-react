@@ -11,7 +11,7 @@ function Visual() {
 	}, []);
 
 	return (
-		<figure ref={frame}>
+		<figure ref={frame} className='myScroll'>
 			<img src={`${path}/images/bg.jpg`} alt='' />
 			<div className='scrollEvent'>
 				<div className='mouse'></div>

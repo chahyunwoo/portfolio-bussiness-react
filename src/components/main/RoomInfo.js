@@ -9,16 +9,19 @@ import 'swiper/css/effect-fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 
-function Roominfo() {
+function Roominfo({ scrolled, start }) {
 	const path = process.env.PUBLIC_URL;
 
 	const rooms = useSelector((store) => store.roomsReducer.rooms);
 
 	SwiperCore.use([Autoplay]);
 
+	// const base = 400;
+	// const position = scrolled - start + base;
+
 	return (
 		<>
-			<section id='roomInfo'>
+			<section id='roomInfo' className='myScroll'>
 				<div className='inner'>
 					<div className='roomDesc'>
 						<div className='wrap'>

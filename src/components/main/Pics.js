@@ -23,7 +23,7 @@ function Pics() {
 
 	return (
 		<>
-			<section id='pics'>
+			<section id='pics' className='myScroll'>
 				<div className='inner'>
 					<div className='title'>
 						<h1>GALLERY</h1>

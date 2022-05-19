@@ -24,7 +24,7 @@ function Videos() {
 
 	return (
 		<>
-			<section id='videos'>
+			<section id='videos' className='myScroll'>
 				<div className='bgPointLeft'></div>
 				<div className='videosBg'>
 					<div className='bgPoint'></div>
