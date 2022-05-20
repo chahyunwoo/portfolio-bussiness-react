@@ -33,9 +33,10 @@ function Main() {
 
 		pos.current.map((pos, idx) => {
 			if (scroll >= pos + base) {
-				for (let i = 0; i < secs.length; i++) {}
-				secs[0].classList.add('on');
-				secs[idx + 1].classList.add('on');
+				for (let i = 0; i < secs.length; i++) {
+					secs[0].classList.add('on');
+					secs[idx + 1].classList.add('on');
+				}
 			}
 		});
 	};
