@@ -18,60 +18,58 @@ function Main() {
 	const [scrolled, setScrolled] = useState(0);
 
 	const getPos = () => {
-		const secs = main.current.querySelectorAll('.myScroll')
+		const secs = main.current.querySelectorAll('.myScroll');
 		pos.current = [];
 
-		for (const sec of secs) pos.current.push(sec.offsetTop)
-	}
-	// console.log(pos.current)
+		for (const sec of secs) pos.current.push(sec.offsetTop);
+	};
 
 	const activation = () => {
-		const base = 100
-		const scroll = window.scrollY
-		setScrolled(scroll)
+		const base = 100;
+		const scroll = window.scrollY;
+		setScrolled(scroll);
 
-		const secs = main.current.querySelectorAll('.myScroll')
+		const secs = main.current.querySelectorAll('.myScroll');
 
 		pos.current.map((pos, idx) => {
 			if (scroll >= pos + base) {
-				for (let i = 0; i < secs.length; i++) {
-				}
-				secs[0].classList.add('on')
-				secs[idx + 1].classList.add('on')
+				for (let i = 0; i < secs.length; i++) {}
+				secs[0].classList.add('on');
+				secs[idx + 1].classList.add('on');
 			}
-		})
-	}
+		});
+	};
 
 	useEffect(() => {
-		const secs = main.current.querySelectorAll('.myScroll')
-		setNum(secs.length)
+		const secs = main.current.querySelectorAll('.myScroll');
+		setNum(secs.length);
 		getPos();
 
-		window.addEventListener('resize', getPos)
-		window.addEventListener('scroll', activation)
+		window.addEventListener('resize', getPos);
+		window.addEventListener('scroll', activation);
 
 		return () => {
-			window.removeEventListener('resize', getPos)
-		window.removeEventListener('scroll', activation)
-		}
-	}, [])
+			window.removeEventListener('resize', getPos);
+			window.removeEventListener('scroll', activation);
+		};
+	}, []);
 
 	useEffect(() => {
 		new Anime(window, {
 			prop: 'scroll',
 			value: pos.current[index],
 			duration: 500,
-		})
-	}, [index])
+		});
+	}, [index]);
 
 	return (
 		<main ref={main}>
 			<Header type={'main'} />
 			<Visual />
-			<RoomInfo scrolled={scrolled} start={pos.current[1]}/>
-      <News />
-      <Pics />
-      <Videos />
+			<RoomInfo scrolled={scrolled} start={pos.current[1]} />
+			<News />
+			<Pics />
+			<Videos />
 		</main>
 	);
 }

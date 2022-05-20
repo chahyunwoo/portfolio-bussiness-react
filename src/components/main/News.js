@@ -55,10 +55,10 @@ function News() {
 									if (index < 4) {
 										return (
 											<li key={index}>
-												<h2>{post.title}</h2>
+												<h2><span>{post.title}</span></h2>
 												<p>
-													{post.content.length > 90
-														? `${post.content.substr(0, 90)}...`
+													{post.content.length > 200
+														? `${post.content.substr(0, 200)}...`
 														: post.content}
 												</p>
 											</li>
