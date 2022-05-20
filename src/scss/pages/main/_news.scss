@@ -6,143 +6,166 @@
 	.inner {
 		@include inner;
 		display: flex;
-    flex-wrap: wrap;
+		flex-wrap: wrap;
 
 		.newsBox {
 			width: 30%;
+			opacity: 0;
+			transform: translateY(50%);
+			transition: $tranSlow;
 
 			.pic {
 				width: 100%;
-        position: relative;
-        
+				position: relative;
+
 				img {
-          @include objectFit;
+					@include objectFit;
 				}
 			}
 
 			h2 {
 				margin-top: 2rem;
-        padding-top: 2rem;
-        font-family: $fontPoint;
-        font-size: $fz36;
-        display: inline-block;
-        border-top: 1px solid $colorBlack;
-        color: $colorBlack;
+				padding-top: 2rem;
+				font-family: $fontPoint;
+				font-size: $fz36;
+				display: inline-block;
+				border-top: 1px solid $colorBlack;
+				color: $colorBlack;
 			}
 		}
 
-    .newsList {
-      width: 70%;
-      color: $colorBlack;
+		.newsList {
+			width: 70%;
+			color: $colorBlack;
+			opacity: 0;
+			transform: translateY(50%);
+			transition: $tranSlow;
+			transition-delay: 0.5s;
 
-      .wrap {
-        padding-left: 10rem;
-        position: relative;
+			.wrap {
+				padding-left: 10rem;
+				position: relative;
 
-        > h3 {
-          font-family: $fontPoint;
-          font-size: $fz24;
-        }
+				> h3 {
+					font-family: $fontPoint;
+					font-size: $fz24;
+				}
 
 				.btnDetail {
 					position: absolute;
 					top: 0;
 					right: 0;
-          color: $colorPoint;
-          font-family: $fontPoint;
-          font-size: $fz16;
+					color: $colorPoint;
+					font-family: $fontPoint;
+					font-size: $fz16;
 
-          .icon {
-            margin-left: 1rem;
-          }
+					.icon {
+						margin-left: 1rem;
+					}
 				}
 
-        > ul {
-          margin-top: 4rem;
+				> ul {
+					margin-top: 4rem;
 
-          li {
-            padding: 2rem 4rem;
-            margin-bottom: 2rem;
-            background-color: $colorWhite;
-            border-radius: 0.5rem;
+					li {
+						padding: 2rem 4rem;
+						margin-bottom: 2rem;
+						background-color: $colorWhite;
+						border-radius: 0.5rem;
 
-            &:last-of-type {
-              margin-bottom: 0;
-            }
+						&:last-of-type {
+							margin-bottom: 0;
+						}
 
-            h2 {
-              font-family: $fontDefault;
-              font-size: 2rem;
-              position: relative;
+						h2 {
+							font-family: $fontDefault;
+							font-size: 2rem;
+							position: relative;
 
-              &:before {
-                content: '#';
-                position: absolute;
-                left: -2rem;
-                color: $colorBlack;
-              }
-            }
+							&:before {
+								content: '#';
+								position: absolute;
+								left: -2rem;
+								color: $colorBlack;
+							}
+						}
 
-            p {
-              margin-top: 2rem;
-              font-family: $fontDefault;
-              font-size: $fz14;
-              line-height: 1.4;
-            }
-          }
-        }
+						p {
+							margin-top: 2rem;
+							font-family: $fontDefault;
+							font-size: $fz14;
+							line-height: 1.4;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#news.myScroll {
+	&.on {
+		.inner {
+			.newsBox {
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+      .newsList {
+        transform: translateY(0);
+				opacity: 1;
       }
-    }
+		}
 	}
 }
 
 @include tablet {
-  #news {
-    background: #e4eef5;
-    padding: 10vw 0;
-  
-    .inner {
-      padding: 0 3rem;
-  
-      .newsBox {
-        width: 100%;
-  
-        .pic {
-          display: none;
-        }
-  
-        h2 {
-          margin-top: 0;
-          padding-top: 0;
-          display: block;
-          text-align: center;
-          border-top: none;
-        }
-      }
-  
-      .newsList {
-        width: 100%;
-  
-        .wrap {
-          padding-left: 0;
-          text-align: center;
-  
-          > h3 {
-            text-align: center;
-            margin-top: 3rem;
-          }
-  
-          .btnDetail {
-            position: static;
-            margin-top: 1rem;
-          }
-  
-          > ul {
-            margin-top: 4rem;
-            text-align: left;
-          }
-        }
-      }
-    }
-  }
+	#news {
+		background: #e4eef5;
+		padding: 10vw 0;
+
+		.inner {
+			padding: 0 3rem;
+
+			.newsBox {
+				width: 100%;
+
+				.pic {
+					display: none;
+				}
+
+				h2 {
+					margin-top: 0;
+					padding-top: 0;
+					display: block;
+					text-align: center;
+					border-top: none;
+				}
+			}
+
+			.newsList {
+				width: 100%;
+
+				.wrap {
+					padding-left: 0;
+					text-align: center;
+
+					> h3 {
+						text-align: center;
+						margin-top: 3rem;
+					}
+
+					.btnDetail {
+						position: static;
+						margin-top: 1rem;
+					}
+
+					> ul {
+						margin-top: 4rem;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
 }

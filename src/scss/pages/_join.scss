@@ -1,32 +1,32 @@
 .join {
-  .joinBg {
-    width: 100%;
+	.joinBg {
+		width: 100%;
 
-    img {
-      @include objectFit;
-      object-position: bottom;
-      filter: blur(1rem);
-      opacity: 0.7;
-    }
-  }
+		img {
+			@include objectFit;
+			object-position: bottom;
+			filter: blur(1rem);
+			opacity: 0.7;
+		}
+	}
 
 	.inner {
 		form {
-      position: relative;
-      padding-bottom: 7rem;
-      font-size: 0;
+			position: relative;
+			padding-bottom: 7rem;
+			font-size: 0;
 
-      .formDeco {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 70%;
+			.formDeco {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 70%;
 
-        img {
-          @include objectFit;
-          opacity: 0.7;
-        }
-      }
+				img {
+					@include objectFit;
+					opacity: 0.7;
+				}
+			}
 
 			fieldset {
 				border: none;
@@ -34,12 +34,23 @@
 
 			.joinWrap {
 				width: 50%;
-        border: 1rem solid #e4eef5;
-        padding: 10rem 10rem 5rem 10rem;
-        box-sizing: content-box;
+				border: 1rem solid #e4eef5;
+				padding: 10rem 10rem 5rem 10rem;
+				box-sizing: content-box;
 				margin: 3rem auto 3rem;
-        background-color: $colorWhite;
-        position: relative;
+				background-color: $colorWhite;
+				position: relative;
+
+				&:before {
+					content: 'SALT-AEWOL';
+					position: absolute;
+					top: 0;
+					left: -14%;
+					color: #e4eef5;
+					font-size: 9rem;
+					writing-mode: vertical-rl;
+					text-orientation: mixed;
+				}
 
 				.inputBox {
 					width: 100%;
@@ -73,20 +84,20 @@
 						-webkit-appearance: none;
 					}
 
-          input[type=submit] {
-            width: 100%;
-            padding: 1.5rem 0;
-            background-color: transparent;
-            border: 1px solid $colorBlack;
-            cursor: pointer;
-          }
+					input[type='submit'] {
+						width: 100%;
+						padding: 1.5rem 0;
+						background-color: transparent;
+						border: 1px solid $colorBlack;
+						cursor: pointer;
+					}
 
-          .err {
-            margin-top: 1rem;
-            display: inline-block;
-            color: $colorPoint;
-            font-size: 1.4rem;
-          }
+					.err {
+						margin-top: 1rem;
+						display: inline-block;
+						color: $colorPoint;
+						font-size: 1.4rem;
+					}
 				}
 			}
 		}
@@ -94,33 +105,37 @@
 }
 
 @include tablet {
-  .join {
-    .inner {
-      width: 100%;
-      padding: 0 3rem;
-      form {
-        .formDeco {
-          display: none;
-        }
+	.join {
+		.inner {
+			width: 100%;
+			padding: 0 3rem;
+			form {
+				.formDeco {
+					display: none;
+				}
 
-        .joinWrap {
-          width: 75%;
-          box-sizing: border-box;
-          padding: 3rem;
-        }
-      }
-    }
-  }
+				.joinWrap {
+					width: 75%;
+					box-sizing: border-box;
+					padding: 3rem;
+
+          &:before {
+            display: none;
+          }
+				}
+			}
+		}
+	}
 }
 
 @include mobile {
-  .join {
-    .inner {
-      form {
-        .joinWrap {
-          width: 100%;
-        }
-      }
-    }
-  }
+	.join {
+		.inner {
+			form {
+				.joinWrap {
+					width: 100%;
+				}
+			}
+		}
+	}
 }

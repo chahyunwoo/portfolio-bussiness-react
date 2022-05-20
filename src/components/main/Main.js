@@ -23,9 +23,10 @@ function Main() {
 
 		for (const sec of secs) pos.current.push(sec.offsetTop)
 	}
+	// console.log(pos.current)
 
 	const activation = () => {
-		const base = 200
+		const base = 100
 		const scroll = window.scrollY
 		setScrolled(scroll)
 
